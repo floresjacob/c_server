@@ -1,7 +1,6 @@
 
 #### README.md
 
-```markdown
 # Running PostgreSQL Locally with test_all_dependencies
 
 This guide provides instructions for setting up and running a local PostgreSQL server to test the `test_all_dependencies` program, which performs various tests including interactions with PostgreSQL, libsodium, libpq, and MySQL.
