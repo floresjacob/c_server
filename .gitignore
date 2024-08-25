@@ -7,3 +7,4 @@ build/
 
 # Ignore sensitive files
 config.json
+output.txt
