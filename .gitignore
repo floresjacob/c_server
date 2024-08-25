@@ -1,0 +1,9 @@
+# Ignore build directory
+build/
+
+# Ignore system files
+.DS_Store
+*.log
+
+# Ignore sensitive files
+config.json
