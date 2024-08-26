@@ -229,6 +229,7 @@ libsodium: Success
 libsodium: Password hashing success
 libpq: Success
 mysql-client: Success
+jwt.h: Success
 All tests succeeded.
 ```
 
