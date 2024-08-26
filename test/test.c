@@ -4,6 +4,7 @@
 #include <sodium.h>           // Libsodium for cryptographic functions
 #include <libpq-fe.h>         // Libpq for PostgreSQL client interactions
 #include <mysql.h>            // MySQL client library
+#include <jwt.h>              // JWT library for JSON Web Tokens
 
 #define PORT 8080             // Define the port on which the HTTP server will run
 
@@ -88,6 +89,22 @@ int main() {
         printf("mysql-client: Success\n");
         mysql_close(mysql);  // Close the MySQL connection
     }
+
+    // Test jwt.h
+    jwt_t *jwt = NULL;
+    if (jwt_new(&jwt) != 0) {
+        printf("jwt.h: Initialization failed\n");
+        MHD_stop_daemon(daemon);  // Stop the daemon if JWT initialization fails
+        return 1;
+    }
+
+    // Set the algorithm for the JWT (for example, HS256 with no key)
+    jwt_set_alg(jwt, JWT_ALG_NONE, NULL, 0);
+
+    printf("jwt.h: Success\n");
+
+    // Free the JWT object
+    jwt_free(jwt);
 
     printf("All tests succeeded.\n");
 
